@@ -1,6 +1,11 @@
 package got;
 
-public class Terrestre implements FuerzaMilitar {
+import javax.persistence.DiscriminatorValue;
+import javax.persistence.Entity;
+
+@Entity
+@DiscriminatorValue("terrestre")
+public class Terrestre extends FuerzaMilitar {
   private int cantidadSoldados;
 
   @Override

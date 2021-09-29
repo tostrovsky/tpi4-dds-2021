@@ -1,14 +1,22 @@
 package got;
 
+import javax.persistence.*;
+
 import static java.util.stream.Collectors.toSet;
 
 import java.util.Collection;
 import java.util.Set;
 import java.util.stream.Collectors;
 
-public class Region {
+@Entity
+@Table(name = "Regiones")
+public class Region extends PersistentEntity{
+
   private String nombre;
+
+  @ManyToOne
   private Casa casaPrincipal;
+  @ManyToMany
   private Collection<Lugar> lugares;
 
 
